@@ -14,21 +14,22 @@
     placeholder="type something here..."
     oninput="updateDisplay()">
 
-    <h1 id="display text">your text goes here</h1>
-    <h2 id="display text2">your text goes here</h2>
+    <h1 id="displayText">your text goes here</h1>
+    <h2 id="displayText2">your text goes here</h2>
 
 
 </body>
 <script>
+
 function updateDisplay(){
     var textbox = document.getElementById('textbox');
     var displayText = document.getElementById('displayText');
-var displayText2 = document.getElementById('displayText2');
+    var displayText2 = document.getElementById('displayText2');
 const d = new Date();
 
-    //displayText.textContent = textbox.value;
-    //displayText.textContent = textbox.value;
-    console.log(textbox.value + date);
+    displayText.textContent = textbox.value;
+    displayText2.textContent = textbox.value;
+    console.log(textbox.value + d + "" +window.location.hostname);
 
 }
 </script>
