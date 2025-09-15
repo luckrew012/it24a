@@ -44,11 +44,18 @@ console.log("No task entered");
    const li = document.createElement("li")
    li.textContent = taskText;
 
+   const taskSpan = document.createElement("span");
+   taskSpan.taxtContent = taskText;
+   
+
    document.getElementById("TaskList").appendChild(li);
 console.log("addTaskItem() called ->:", taskText, Date());
    
 const deleteBtn = createDeleteButton(li);
 li.appendChild(deleteBtn);
+
+const editBtn = createEditButton(li,taskSpan);
+li.appendChild(editBtn);
 }
 
    function createDeleteButton(li){
@@ -68,6 +75,36 @@ return deleteBtn;
    function handleDeleteClick(li){
 li.remove();
 console.log("handleDeleteClick() called ->" , li.textContent.replace("x" , "").trim,Date())
+
+   }
+
+   function createEditButton(li,taskSpan){
+
+    const editBtn = document.createElement("button");
+    editBtn.textContent = "Edit";
+    editBtn.classname = "edit-btn";
+    editBtn.style.marginLeft = "8px";
+    editBtn.onclick = () => handleEditClick(li,taskSpan);
+
+    console.log("createEditButton() called ->, ", taskSpan.textContent );
+    return editBtn;
+   }
+
+   function handleEditClick(li){
+const currentText = li.firstChild.textContent.trim();
+console.log("handleEditClick() called ->", currentText, Date());
+
+const newText = prompt("Edit your Task: " , currentText );
+
+if(newText !== null && newText.trim()  !== ""){
+    li.firstChild.textContent = newText.trim();
+    console.log("handleEditClick() -> updated to :", newText.trim(), Date());
+    
+ } else {
+    console.log("handleEditClick() -> no  changes made");
+
+}
+
 
    }
     </script>
