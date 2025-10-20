@@ -46,7 +46,7 @@ fetch(mapDataUrl)
         const marker = L.marker([pin, lat,pin,lng]).addTo(map);
         const img = `<img src='${pin.image}' class=popup-image>`
         const popupContent = `${img}<br><b>${pin.title} </b><br>${pin.description}`;
-
+marker.bindPopup(`${img}<br><b>${pin.title} </b><br>${pin.description}`)
         console.log(`${pin.name} Loaded` +Date());
 
     })
@@ -55,7 +55,7 @@ fetch(mapDataUrl)
 .catch(err=>console.error('Error loading JSON'))
 }
 document.addEventListener('DOMContentLoaded', ()=>{
-    initMap
+    initMap('mapdata.json');
 })
 </script>
 </html>
