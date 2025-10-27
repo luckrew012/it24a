@@ -7,31 +7,13 @@
     <title>IT24A-Event programming</title>
 </head>
 <body>
-    <h1>Hello World</h1>
-
-    <input type="text"
-    id="textbox"
-    placeholder="type something here..."
-    oninput="updateDisplay()">
-
-    <h1 id="displayText">your text goes here</h1>
-    <h2 id="displayText2">your text goes here</h2>
+    <h1><a href="basic-events.html">1. Basic Events</a></h1>
+    <h1><a href="todolist.html">2. To do list</a></h1>
+    <h1><a href="maps.html">3. Maps</a></h1>
+    <h1><a href="campus-map.html">4. Campus Map</a></h1>
 
 
 </body>
-<script>
 
-function updateDisplay(){
-    var textbox = document.getElementById('textbox');
-    var displayText = document.getElementById('displayText');
-    var displayText2 = document.getElementById('displayText2');
-const d = new Date();
-
-    displayText.textContent = textbox.value;
-    displayText2.textContent = textbox.value;
-    console.log(textbox.value + d + "" +window.location.hostname);
-
-}
-</script>
 </html>
 
